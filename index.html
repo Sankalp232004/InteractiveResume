@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sankalp Mishra - Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="action-buttons">
+        <button id="print-btn" title="Print / Save as PDF"><i class="fa-solid fa-print"></i></button>
+        <button id="dark-mode-toggle" title="Toggle Dark Mode"><i class="fa-solid fa-circle-half-stroke"></i></button>
+    </div>
+
+    <div class="resume-container" id="resume-container">
+        </div>
+
+    <script>
+        const resumeData = {
+            header: {
+                name: "Sankalp Mishra",
+                location: "Lucknow, Uttar Pradesh, India",
+                email: "mishrasankalp04@gmail.com",
+                linkedin: "linkedin.com/in/sankalp2329",
+                github: "github.com/Sankalp232004"
+            },
+            summary: "Economics and Applied Mathematics undergraduate at FLAME University with a passion for applying quantitative analysis and data-driven models to solve complex business challenges. Experience in market research, business development, and project management with a keen interest in consulting, fintech, and economic research opportunities. Proven ability to lead teams, manage end-to-end project lifecycles, and deliver data-backed insights.",
+            education: [
+                {
+                    institution: "FLAME University – Pune, Maharashtra",
+                    degree: "Bachelor of Arts, Major in Economics, Minor in Applied Mathematics",
+                    period: "Expected Aug 2026",
+                    details: [
+                        "<strong>Relevant Coursework:</strong> Econometrics, Statistical Analysis, Financial Markets, Game Theory",
+                        "<strong>Activities:</strong> Entrepreneurship Lab (Startup Strategy), Investment Lab (Equity Research), Literary & Debating Society"
+                    ]
+                }
+            ],
+            experience: [
+                {
+                    title: "Business Development Associate",
+                    company: "ResoluteAI Software",
+                    location: "Bengaluru, India",
+                    period: "Jun 2025 – Present",
+                    details: [
+                        "Drives B2B growth for AI and automation solutions by conducting market research to identify and qualify new enterprise leads.",
+                        "Manages the end-to-end client pipeline, coordinating product demos and aligning go-to-market strategies with customer insights to scale qualified leads into high-conversion opportunities."
+                    ]
+                },
+                {
+                    title: "Member, Placement Committee",
+                    company: "FLAME University",
+                    location: "Pune, India",
+                    period: "Jul 2024 – Jan 2025",
+                    details: [
+                        "Spearheaded strategic partnerships with industry leaders, expanding recruiter outreach for campus placements.",
+                        "Streamlined the end-to-end coordination of recruitment drives, managing scheduling, databases, and communications to improve operational efficiency."
+                    ]
+                },
+                {
+                    title: "Freelance Writer & Research Consultant",
+                    company: "Independent Projects",
+                    location: "Remote",
+                    period: "Jan 2023 – Present",
+                    details: [
+                        "Delivered SEO-driven content, market research, and digital strategy for clients in the edtech, fintech, and sustainability sectors.",
+                        "Co-founded and produced \"Byte-Sized Economics,\" a podcast simplifying complex economic topics, managing all aspects from scripting and recording (Audacity) to promotion and distribution (Anchor.fm)."
+                    ]
+                }
+            ],
+            projects: [
+                {
+                    title: "Responsive Web Apps | HTML, CSS, JavaScript",
+                    description: "Developed a suite of web applications, including a Blackjack Game showcasing event-driven programming, a Secure Password Generator, and a personal Portfolio Website hosted on GitHub Pages."
+                },
+                {
+                    title: "Philosophical Analysis on Free Will | Medium Article",
+                    description: "Authored a widely-read article simplifying complex theories like determinism and compatibilism from philosophy and neuroscience for a general audience, encouraging critical reflection on autonomy and choice."
+                }
+            ],
+            skills: {
+                languages: "Python (Pandas, NumPy, Matplotlib), JavaScript, HTML, CSS",
+                software: "Advanced Excel, Notion, Canva, Audacity, CapCut, Google Suite",
+                professional: "Financial Analysis, Project Management, Digital Marketing, SEO, Lead Generation, Stakeholder Management"
+            },
+            awards: [
+                "India Book of Records Holder & Top 100 Indian Record Achievers (Jun 2017)",
+                "Bronze Medal, The Royal Commonwealth Society’s Essay Competition",
+                "Top 10% Finalist, State-level Inter-School Annual Mathematics Competition"
+            ]
+        };
+    </script>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

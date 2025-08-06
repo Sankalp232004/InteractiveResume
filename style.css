@@ -1,0 +1,217 @@
+/* style.css */
+
+:root {
+    --page-bg: #f5f5f5;
+    --paper-bg: #ffffff;
+    --text-color: #333;
+    --heading-color: #005A9C;
+    --link-color: #007BFF;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+    --page-bg: #121212;
+    --paper-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --heading-color: #00a0dc;
+    --link-color: #3498db;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--page-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    padding: 2rem 0;
+}
+
+.resume-container {
+    max-width: 8.5in;
+    min-height: 11in;
+    margin: auto;
+    padding: 0.75in;
+    background-color: var(--paper-bg);
+    box-shadow: 0 0 15px var(--shadow-color);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.resume-header {
+    text-align: center;
+    border-bottom: 2px solid var(--heading-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.resume-header h1 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin: 0;
+}
+
+.resume-header .contact-info {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.resume-header a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.resume-header a:hover {
+    text-decoration: underline;
+}
+
+section {
+    margin-bottom: 1.5rem;
+    /* --- NEW: Animation styles --- */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- END: Animation styles --- */
+
+section h2 {
+    font-size: 1.2rem;
+    color: var(--heading-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+/* --- NEW: Typewriter styles --- */
+#summary-text {
+    min-height: 120px;
+    /* Reserve space to prevent layout shift */
+}
+
+#summary-text::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        color: transparent;
+    }
+
+    50% {
+        color: var(--text-color);
+    }
+}
+
+/* --- END: Typewriter styles --- */
+
+
+.entry {
+    margin-bottom: 1rem;
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.entry-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.sub-header {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+body.dark-mode .sub-header {
+    color: #aaa;
+}
+
+ul {
+    padding-left: 20px;
+    margin-top: 0.5rem;
+}
+
+li {
+    margin-bottom: 0.3rem;
+}
+
+.skills p {
+    margin: 0.5rem 0;
+}
+
+.skills strong {
+    color: var(--heading-color);
+}
+
+.action-buttons {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+}
+
+.action-buttons button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--paper-bg);
+    color: var(--heading-color);
+    box-shadow: 0 2px 5px var(--shadow-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.action-buttons button:hover {
+    transform: scale(1.1);
+    background-color: var(--heading-color);
+    color: var(--paper-bg);
+}
+
+@media print {
+    body {
+        background-color: #fff;
+        padding: 0;
+    }
+
+    .resume-container {
+        box-shadow: none;
+        margin: 0;
+        max-width: 100%;
+        padding: 0.5in;
+    }
+
+    .action-buttons {
+        display: none;
+    }
+
+    a {
+        color: #000 !important;
+        text-decoration: none !important;
+    }
+
+    section {
+        opacity: 1;
+        transform: none;
+    }
+}
