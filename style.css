@@ -42,23 +42,19 @@ body {
     padding-bottom: 1rem;
     margin-bottom: 1.5rem;
 }
-
 .resume-header h1 {
     font-size: 2.5rem;
     color: var(--heading-color);
     margin: 0;
 }
-
 .resume-header .contact-info {
     font-size: 0.9rem;
     margin-top: 0.5rem;
 }
-
 .resume-header a {
     color: var(--link-color);
     text-decoration: none;
 }
-
 .resume-header a:hover {
     text-decoration: underline;
 }
@@ -69,7 +65,6 @@ section {
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
 section.visible {
     opacity: 1;
     transform: translateY(0);
@@ -88,61 +83,46 @@ section h2 {
 #summary-text {
     min-height: 120px;
 }
-
 #summary-text::after {
     content: '|';
     animation: blink 1s step-end infinite;
 }
-
 @keyframes blink {
-    from,
-    to {
-        color: transparent;
-    }
-    50% {
-        color: var(--text-color);
-    }
+    from, to { color: transparent; }
+    50% { color: var(--text-color); }
 }
 
 .entry {
     margin-bottom: 1rem;
 }
-
 .entry-header {
     display: flex;
     justify-content: space-between;
     font-weight: bold;
 }
-
 .entry-header h3 {
     margin: 0;
     font-size: 1.1rem;
     color: var(--text-color);
 }
-
 .sub-header {
     font-style: italic;
     color: #555;
     margin-bottom: 0.5rem;
 }
-
 body.dark-mode .sub-header {
     color: #aaa;
 }
-
 ul {
     padding-left: 20px;
     margin-top: 0.5rem;
 }
-
 li {
     margin-bottom: 0.3rem;
 }
-
 .skills p {
     margin: 0.5rem 0;
 }
-
 .skills strong {
     color: var(--heading-color);
 }
@@ -156,7 +136,6 @@ li {
     gap: 10px;
     z-index: 100;
 }
-
 .action-buttons button {
     width: 50px;
     height: 50px;
@@ -169,7 +148,6 @@ li {
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
-
 .action-buttons button:hover {
     transform: scale(1.1);
     background-color: var(--heading-color);
