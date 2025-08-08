@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <header class="resume-header">
                 <h1>${data.header.name}</h1>
                 <p class="contact-info">
-                    ${data.header.location} | 
-                    <a href="mailto:${data.header.email}">${data.header.email}</a> | 
-                    <a href="https://${data.header.linkedin}" target="_blank">${data.header.linkedin}</a> | 
+                    ${data.header.location} |
+                    <a href="mailto:${data.header.email}">${data.header.email}</a> |
+                    <a href="https://${data.header.linkedin}" target="_blank">${data.header.linkedin}</a> |
                     <a href="https://${data.header.github}" target="_blank">${data.header.github}</a>
                 </p>
             </header>
@@ -56,14 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         });
         html += '</section>';
-        html += `
-            <section class="skills hidden">
-                <h2>Technical Skills</h2>
-                <p><strong>Languages:</strong> ${data.skills.languages}</p>
-                <p><strong>Software:</strong> ${data.skills.software}</p>
-                <p><strong>Skills:</strong> ${data.skills.professional}</p>
-            </section>
-        `;
+        
+        html += '<section class="skills hidden"><h2>Technical Skills</h2>';
+        data.skills.forEach(skillCategory => {
+            html += `<p><strong>${skillCategory.category} |</strong> ${skillCategory.details}</p>`;
+        });
+        html += '</section>';
+        
         html += '<section class="awards hidden"><h2>Honors & Awards</h2>';
         html += `<ul>${data.awards.map(award => `<li>${award}</li>`).join('')}</ul>`;
         html += '</section>';
@@ -84,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(typeWriter, 20);
         } else {
             summaryTextElement.style.borderRight = 'none';
-            summaryTextElement.classList.remove('typing');
         }
     }
 
