@@ -1,5 +1,3 @@
-/* style.css */
-
 :root {
     --page-bg: #f5f5f5;
     --paper-bg: #ffffff;
@@ -67,7 +65,6 @@ body {
 
 section {
     margin-bottom: 1.5rem;
-    /* --- NEW: Animation styles --- */
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -77,8 +74,6 @@ section.visible {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* --- END: Animation styles --- */
 
 section h2 {
     font-size: 1.2rem;
@@ -90,10 +85,8 @@ section h2 {
     margin-bottom: 1rem;
 }
 
-/* --- NEW: Typewriter styles --- */
 #summary-text {
     min-height: 120px;
-    /* Reserve space to prevent layout shift */
 }
 
 #summary-text::after {
@@ -102,19 +95,14 @@ section h2 {
 }
 
 @keyframes blink {
-
     from,
     to {
         color: transparent;
     }
-
     50% {
         color: var(--text-color);
     }
 }
-
-/* --- END: Typewriter styles --- */
-
 
 .entry {
     margin-bottom: 1rem;
@@ -193,23 +181,19 @@ li {
         background-color: #fff;
         padding: 0;
     }
-
     .resume-container {
         box-shadow: none;
         margin: 0;
         max-width: 100%;
         padding: 0.5in;
     }
-
     .action-buttons {
         display: none;
     }
-
     a {
         color: #000 !important;
         text-decoration: none !important;
     }
-
     section {
         opacity: 1;
         transform: none;
