@@ -1,18 +1,15 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('resume-container');
 
-    // Function to build the entire resume
     function buildResume(data) {
         let html = '';
         html += `
             <header class="resume-header">
                 <h1>${data.header.name}</h1>
                 <p class="contact-info">
-                    ${data.header.location} |
-                    <a href="mailto:${data.header.email}">${data.header.email}</a> |
-                    <a href="https://${data.header.linkedin}" target="_blank">${data.header.linkedin}</a> |
+                    ${data.header.location} | 
+                    <a href="mailto:${data.header.email}">${data.header.email}</a> | 
+                    <a href="https://${data.header.linkedin}" target="_blank">${data.header.linkedin}</a> | 
                     <a href="https://${data.header.github}" target="_blank">${data.header.github}</a>
                 </p>
             </header>
@@ -74,11 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = html;
     }
 
-    // Build the resume on page load
     buildResume(resumeData);
 
-
-    // --- NEW: Typewriter Effect ---
     const summaryTextElement = document.getElementById('summary-text');
     const fullSummaryText = resumeData.summary;
     let charIndex = 0;
@@ -87,15 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (charIndex < fullSummaryText.length) {
             summaryTextElement.innerHTML += fullSummaryText.charAt(charIndex);
             charIndex++;
-            setTimeout(typeWriter, 20); // Adjust typing speed here
+            setTimeout(typeWriter, 20);
         } else {
             summaryTextElement.style.borderRight = 'none';
             summaryTextElement.classList.remove('typing');
         }
     }
 
-
-    // --- NEW: Scroll Animation Logic ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -103,19 +95,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.1 // Trigger when 10% of the element is visible
+        threshold: 0.1
     });
 
-    // Observe all sections
     document.querySelectorAll('section.hidden').forEach(section => {
         observer.observe(section);
     });
 
-    // Trigger typewriter after a short delay for a smoother start
     setTimeout(typeWriter, 500);
 
-
-    // --- Existing Interactive Features ---
     const printBtn = document.getElementById('print-btn');
     const darkModeToggle = document.getElementById('dark-mode-toggle');
 
