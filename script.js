@@ -230,6 +230,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initRevealObserver() {
         const revealables = document.querySelectorAll('.reveal');
+        if (!revealables.length) {
+            return false;
+        }
+        if (!('IntersectionObserver' in window)) {
+            revealables.forEach(section => section.classList.add('visible'));
+            return false;
+        }
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -239,6 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { threshold: 0.2 });
         revealables.forEach(section => observer.observe(section));
+        return true;
     }
 
     function updateScrollIndicator() {
@@ -261,7 +269,10 @@ document.addEventListener('DOMContentLoaded', () => {
     runTypewriter('hero-pitch', resumeData.hero.pitch);
     initTabs();
     initFocusCards();
-    initRevealObserver();
+    const animationsReady = initRevealObserver();
+    if (animationsReady) {
+        document.body.classList.add('animations-ready');
+    }
     syncThemeOnLoad();
     updateScrollIndicator();
 
