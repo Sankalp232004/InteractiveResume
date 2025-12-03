@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sankalp Mishra - Resume</title>
+    <title>Sankalp Mishra · Interactive Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -14,90 +17,136 @@
         <button id="dark-mode-toggle" title="Toggle Dark Mode"><i class="fa-solid fa-circle-half-stroke"></i></button>
     </div>
 
-    <div class="resume-container" id="resume-container">
+    <div class="scroll-indicator" id="scroll-indicator" aria-hidden="true">
+        <span></span>
     </div>
+
+    <div class="resume-container" id="resume-container"></div>
 
     <script>
         const resumeData = {
-            header: {
+            hero: {
                 name: "Sankalp Mishra",
+                role: "Quantitative Strategy & Business Research",
+                headline: "Economics and Applied Mathematics undergraduate building data-backed strategies for high-growth teams.",
+                pitch: "I translate econometric thinking, market intelligence, and product storytelling into decisions that move SaaS, consulting, and research teams forward.",
                 location: "Lucknow, Uttar Pradesh, India",
                 email: "mishrasankalp04@gmail.com",
                 linkedin: "linkedin.com/in/sankalp2329",
-                github: "github.com/Sankalp232004"
+                github: "github.com/Sankalp232004",
+                availability: "Open to Summer 2025 consulting, strategy, and quantitative research internships",
+                tags: ["Quant Research", "Data Strategy", "Consulting Readiness"],
+                spotlight: [
+                    "Economics & Applied Mathematics undergraduate at FLAME University (Class of 2026)",
+                    "Experience across business development, placement strategy, and cultural research leadership",
+                    "Comfortable switching between Python notebooks, stakeholder interviews, and executive-ready narratives"
+                ]
             },
-            summary: "Economics and Applied Mathematics undergraduate specializing in quantitative analysis and data-driven strategy. I leverage Python, econometric modeling, and machine learning to transform complex data into actionable insights for high-impact business decisions. With proven experience in project management and market research, I am actively seeking consulting and quantitative research internships where I can deliver data-backed solutions.",
+            metrics: [
+                { value: "82%", label: "ML accuracy", detail: "IPL outcome predictor" },
+                { value: "15+", label: "Industry partners", detail: "Activated for FLAME placements" },
+                { value: "200+", label: "Students coached", detail: "Resume and interview readiness" },
+                { value: "14", label: "Researchers led", detail: "Discover India leadership" }
+            ],
+            focusAreas: [
+                {
+                    title: "Quant Strategy",
+                    statement: "Builds predictive models and econometric experiments that inform go-to-market bets.",
+                    keywords: ["Econometrics", "Scenario Planning", "Python Pipelines"]
+                },
+                {
+                    title: "Business Intelligence",
+                    statement: "Connects market research, competitor scans, and stakeholder interviews to actionable roadmaps.",
+                    keywords: ["Market Mapping", "Lead Scoring", "CRM Insights"]
+                },
+                {
+                    title: "Storytelling & Enablement",
+                    statement: "Turns analytics into narratives that build conviction across leadership and student communities.",
+                    keywords: ["Executive Narratives", "Workshops", "Data Visualization"]
+                }
+            ],
             experience: [
                 {
                     title: "Business Development Associate",
                     company: "ResoluteAI Software",
                     location: "Bengaluru, India",
                     period: "Jun 2025 – Aug 2025",
-                    details: [
-                        "Drove B2B growth for AI solutions by conducting market research to identify and qualify new enterprise leads in the tech and finance sectors.",
-                        "Managed the end-to-end client pipeline, coordinating product demos and aligning go-to-market strategies with customer insights to scale opportunities."
-                    ]
+                    impact: [
+                        "Drove B2B growth for AI solutions by conducting market research to identify enterprise leads across technology and finance verticals.",
+                        "Managed an end-to-end pipeline, coordinating demos and aligning go-to-market plays with customer intelligence."
+                    ],
+                    outcomes: [
+                        "Scaled qualified opportunity coverage in fintech and SaaS accounts.",
+                        "Equipped founding leadership with tailored insight briefs for high-stakes demos."
+                    ],
+                    tools: ["HubSpot", "Competitive Intelligence", "Solution Selling"]
                 },
                 {
                     title: "Member, Placement Committee",
                     company: "FLAME University",
                     location: "Pune, India",
                     period: "Jul 2024 – Jan 2025",
-                    details: [
-                        "Spearheaded strategic partnerships with 15+ new industry leaders, expanding recruiter outreach for campus placements.",
-                        "Co-designed and delivered resume-building and interview preparation workshops for 200+ students, improving job readiness and alignment with industry standards."
-                    ]
+                    impact: [
+                        "Spearheaded partnerships with 15+ new industry leaders, widening the recruiter portfolio.",
+                        "Co-designed resume and interview readiness labs for 200+ students, aligning candidates with recruiter expectations."
+                    ],
+                    outcomes: [
+                        "Improved conversion rates for priority roles by matching students to recruiter scorecards.",
+                        "Built a repeatable outreach motion and knowledge base for future cohorts."
+                    ],
+                    tools: ["Stakeholder Management", "Workshop Design", "CRM Tracking"]
                 },
                 {
                     title: "Group Representative, Discover India Program",
                     company: "FLAME University",
                     location: "Pune, India",
                     period: "Aug 2024 – May 2025",
-                    details: [
-                        "Directed a 14-member cross-functional team to produce a multidisciplinary research report and documentary, recognized for its academic depth.",
-                        "Managed four project verticals (Writing, Finance, Logistics, Documentation), ensuring on-time delivery of all project milestones through effective project management."
-                    ]
+                    impact: [
+                        "Directed a 14-member cross-functional research team to produce a multidisciplinary report and documentary.",
+                        "Orchestrated writing, finance, logistics, and documentation workstreams to deliver on time."
+                    ],
+                    outcomes: [
+                        "Project recognized for academic depth and narrative craft.",
+                        "Institutionalized planning cadences, retrospectives, and content reviews for the program."
+                    ],
+                    tools: ["Project Management", "Field Research", "Creative Direction"]
                 }
             ],
-            education: [
-                {
-                    institution: "FLAME University | Pune, Maharashtra",
-                    degree: "Bachelor of Arts, Economics (Minor: Applied Mathematics)",
-                    period: "Expected Aug 2026",
-                    details: [
-                        "<strong>Highlights:</strong> Applied quantitative analysis and financial modeling in the university's Investment and Entrepreneurship Labs; honed public speaking and analytical skills in the Debating Society.",
-                        "<strong>Relevant Coursework:</strong> Econometrics, Statistical Modeling, Financial Markets, Game Theory."
-                    ]
-                }
-            ],
+            education: {
+                institution: "FLAME University",
+                location: "Pune, Maharashtra",
+                program: "Bachelor of Arts, Economics (Minor: Applied Mathematics)",
+                period: "Expected Aug 2026",
+                highlights: [
+                    "Investment Lab contributor applying financial modeling to live equity theses.",
+                    "Entrepreneurship Lab fellow supporting venture discovery sprints.",
+                    "Active member of the Debating Society with multiple adjudication invites."
+                ],
+                coursework: ["Econometrics", "Statistical Modeling", "Financial Markets", "Game Theory"]
+            },
             projects: [
                 {
-                    title: "Machine Learning for IPL Match Prediction | Python, Pandas, Scikit-learn",
-                    description: "Developed an end-to-end machine learning project to predict Indian Premier League (IPL) match outcomes, achieving an 82% prediction accuracy on a held-out test set by analyzing over 2,000 historical matches."
+                    title: "Machine Learning for IPL Match Prediction",
+                    summary: "Engineered an end-to-end workflow predicting IPL match outcomes with 82% accuracy across 2,000+ historical games.",
+                    stack: ["Python", "Pandas", "Scikit-learn"],
+                    highlights: ["Feature engineered venue-adjusted strike rates", "Deployed evaluation dashboard for what-if scenarios"]
                 },
                 {
-                    title: "Interactive India GDP Dashboard | Excel, Power Query, Data Visualization",
-                    description: "Designed and built an interactive dashboard to analyze and compare the economic performance of Indian states using official RBI data, featuring dynamic slicers and a color-coded heatmap for insightful analysis."
+                    title: "Interactive India GDP Dashboard",
+                    summary: "Built an RBI data-powered dashboard exposing inter-state growth deltas for policy exploration.",
+                    stack: ["Excel", "Power Query", "Data Visualization"],
+                    highlights: ["Designed slicers for temporal insights", "Crafted heat maps to contrast capital inflows"]
                 }
             ],
             skills: [
-                {
-                    category: "Data Science & Analysis",
-                    details: "Python (Pandas, NumPy, Scikit-learn), Excel, SQL, Data Wrangling, Exploratory Data Analysis (EDA), Predictive Modeling, Econometrics, Time Series Forecasting, and Statistical Analysis."
-                },
-                {
-                    category: "Business & Strategy",
-                    details: "Project Management, Financial Modeling, Market Research, Stakeholder Management, Business Development, Lead Generation, and Go-to-Market Strategy."
-                },
-                {
-                    category: "Content & Communication",
-                    details: "Digital Marketing, SEO, Public Speaking, Content Strategy, Technical Writing, and Data-Driven Storytelling."
-                }
+                { group: "Data Science & Analysis", items: ["Python", "Pandas", "NumPy", "Scikit-learn", "SQL", "Econometrics", "EDA"] },
+                { group: "Business & Strategy", items: ["Project Management", "Financial Modeling", "Market Research", "Stakeholder Management", "Go-to-Market Strategy"] },
+                { group: "Content & Communication", items: ["Public Speaking", "Workshop Facilitation", "Technical Writing", "SEO", "Data Storytelling"] }
             ],
             awards: [
-                "Bronze Medal, The Royal Commonwealth Society's Essay Competition",
-                "Top 10% Finalist, State-level Inter-School Mathematics Competition",
-                "India Book of Records Holder (Recognized among Top 100 Achievers)"
+                "Bronze Medal · The Royal Commonwealth Society's Essay Competition",
+                "Top 10% Finalist · State-level Inter-School Mathematics Competition",
+                "India Book of Records Holder · Recognized among Top 100 Achievers"
             ]
         };
     </script>
